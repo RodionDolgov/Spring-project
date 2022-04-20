@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Component
 public class MusicPlayer{
@@ -20,7 +21,18 @@ public class MusicPlayer{
         this.music2=music2;
     }
 
-    public String playMusic(){
+    public String playMusic(Genre genre){
+        switch (genre){
+            case CLASSICAL:{
+                return Math.random() * 3
+            }
+            case POP:{
+
+            }
+            case ROCK:{
+
+            }
+        }
         return "Playing: " + music1.getSong() + ", " +music2.getSong();
     }
 }
