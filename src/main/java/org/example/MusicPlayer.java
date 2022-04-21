@@ -8,8 +8,10 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @Component
 public class MusicPlayer{
@@ -22,17 +24,36 @@ public class MusicPlayer{
     }
 
     public String playMusic(Genre genre){
+        List<String> current_playlist = null;//new ArrayList<>(music1.getSong());
+
         switch (genre){
             case CLASSICAL:{
-                return "Math.random() * 3;";
+                current_playlist = new ArrayList<>(music1.getSong());
+//                for(int i = 0; i < music1.getSong().size(); i++){
+//                    current_playlist.add(music1.getSong().get(i));
+//                }
+                //addAll Можно использовать
+
+                try{
+                    int random_number = (int) (Math.random() * 3);
+                    return current_playlist.get(random_number);
+                }catch (NullPointerException e){
+                    return "Something went wrong :(";
+                }
             }
             case POP:{
 
             }
             case ROCK:{
-
+                current_playlist = music2.getSong();
             }
         }
-        return "Playing: " + music1.getSong() + ", " +music2.getSong();
+
+        try{
+            return current_playlist.get(1);
+        }catch (NullPointerException e){
+            return "Something went wrong :(";
+        }
+        //return "Playing: " + music1.getSong() + ", " +music2.getSong();
     }
 }
