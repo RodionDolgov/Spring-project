@@ -25,6 +25,7 @@ public class MusicPlayer{
         switch (genre){
             case CLASSICAL:{
                 String s = " ";
+                String q = " ";
                 String w = " ";
                 return "Math.random() * 3;";
             }
