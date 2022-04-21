@@ -24,7 +24,8 @@ public class MusicPlayer{
     public String playMusic(Genre genre){
         switch (genre){
             case CLASSICAL:{
-                return Math.random() * 3
+                String s = " ";
+                return "Math.random() * 3;";
             }
             case POP:{
 
