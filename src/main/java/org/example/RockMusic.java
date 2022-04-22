@@ -17,6 +17,6 @@ public class RockMusic implements Music{
 
     @Override
     public List<String> getSong() {
-        return songs;
+        return songs.subList(0,2);
     }
 }

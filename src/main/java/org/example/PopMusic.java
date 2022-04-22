@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@Component
 public class PopMusic implements Music{
     private PopMusic(){}
     public static PopMusic getPopMusic(){
