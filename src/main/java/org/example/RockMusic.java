@@ -9,6 +9,10 @@ public class RockMusic implements Music{
 
     private List<String> songs = new ArrayList<>();
 
+    public RockMusic() {
+        fillList();
+    }
+
     public void fillList(){
         songs.add("Follow Your Heart");
         songs.add("Believe in Love");
