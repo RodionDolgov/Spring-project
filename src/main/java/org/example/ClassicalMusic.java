@@ -21,7 +21,7 @@ public class ClassicalMusic implements Music{
     }
     @Override
     public List<String> getSong() {
-        return songs;
+        return songs.subList(0,2);
     }
 
     //Попробовать реализовать на уровне интерфейса
