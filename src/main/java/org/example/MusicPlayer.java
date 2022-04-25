@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-@Component
 public class MusicPlayer{
     private Music music1;
     private Music music2;
@@ -34,13 +33,13 @@ public class MusicPlayer{
                 int random_number = (int) (Math.random() * 3);
                 return current_playlist.get(random_number);
             }
-            case POP:{
-                current_playlist = new ArrayList<>(music3.getSong());
+            case ROCK:{
+                current_playlist = new ArrayList<>(music2.getSong());
                 int random_number = (int) (Math.random() * 3);
                 return current_playlist.get(random_number);
             }
-            case ROCK:{
-                current_playlist = new ArrayList<>(music2.getSong());
+            case POP:{
+                current_playlist = new ArrayList<>(music3.getSong());
                 int random_number = (int) (Math.random() * 3);
                 return current_playlist.get(random_number);
             }

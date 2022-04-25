@@ -5,9 +5,8 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class PopMusic implements Music{
-    private PopMusic(){fillList();}
+    public PopMusic(){fillList();}
     public static PopMusic getPopMusic(){
         return new PopMusic();
     }

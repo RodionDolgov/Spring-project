@@ -6,11 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
 public class ClassicalMusic implements Music{
     private List<String> songs = new ArrayList<>();
 
-    private ClassicalMusic(){
+    public ClassicalMusic(){
         fillList();
     }
 
@@ -21,12 +20,6 @@ public class ClassicalMusic implements Music{
     }
     @Override
     public List<String> getSong() {
-        return songs.subList(0,2);
+        return songs;
     }
-
-    //Попробовать реализовать на уровне интерфейса
-//    public String getRandomsong(){
-//        int random_number = (int) (Math.random() *3);
-//        return songs.get(random_number);
-//    }
 }
