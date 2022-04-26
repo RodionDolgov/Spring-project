@@ -14,7 +14,7 @@ public class ClassicalMusic implements Music{
     }
 
     public void fillList(){
-        songs.add("Moon Sonate");
+        songs.add("SUN Sonate");
         songs.add("Kalinka");
         songs.add("Spring");
     }
