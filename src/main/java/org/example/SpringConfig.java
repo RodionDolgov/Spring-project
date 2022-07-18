@@ -5,7 +5,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+import java.util.List;
+
 @Configuration
+@ComponentScan("org.example")
 @PropertySource("classpath:musicPlayer.properties")
 public class SpringConfig {
     @Bean
@@ -17,12 +20,8 @@ public class SpringConfig {
         return new RockMusic();
     }
     @Bean
-    public PopMusic popMusic(){
-        return new PopMusic();
-    }
-    @Bean
     public MusicPlayer musicPlayer(){
-        return new MusicPlayer(classicalMusic(),rockMusic(),popMusic());
+        return new MusicPlayer(rockMusic(),classicalMusic());
     }
     @Bean
     public Computer computer(){

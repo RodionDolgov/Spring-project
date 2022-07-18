@@ -3,17 +3,20 @@ package org.example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Computer {
-    private  int id;
-    private MusicPlayer musicPlayer;
+        private int id;
+        private MusicPlayer musicPlayer;
 
-    public Computer(MusicPlayer musicPlayer){
-        this.id = 1;
-        this.musicPlayer = musicPlayer;
-    }
+        public Computer(MusicPlayer musicPlayer) {
+            this.id = 1;
+            this.musicPlayer = musicPlayer;
+        }
 
-    @Override
-    public String toString() {
-        return "Computer " + id + " " + musicPlayer.playMusic(Genre.POP);
-    }
+        @Override
+        public String toString() {
+            return "Computer " + id + " " + musicPlayer.playMusic();
+        }
 }

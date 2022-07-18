@@ -1,25 +1,26 @@
 package org.example;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
 public class RockMusic implements Music{
 
-    private List<String> songs = new ArrayList<>();
-
-    public RockMusic() {
-        fillList();
+    @PostConstruct
+    public void doMyInit() {
+        System.out.println("Doing my initialization");
     }
 
-    public void fillList(){
-        songs.add("Follow Your Heart");
-        songs.add("Believe in Love");
-        songs.add("Turn on the night");
+    // Для Prototype бинов не вызывается destroy-метод!
+    @PreDestroy
+    public void doMyDestroy() {
+        System.out.println("Doing my destruction");
     }
 
     @Override
-    public List<String> getSong() {
-        return songs;
+    public String getSong() {
+        return "Rock";
     }
 }
